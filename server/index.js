@@ -42,7 +42,7 @@ socket.on("connection",  function (client) {
             author,
             createdAt: new Date()
         }).save();
-        User.findOneAndUpdate({email}, {$set: {lastVisit: new Date() } }, {new: true}, (error, obj) => {
+        User.findOneAndUpdate({email}, {$set: {lastAction: new Date() } }, {new: true}, (error, obj) => {
             console.log(error)
         });
         callback(savedAction);
